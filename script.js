@@ -5,6 +5,9 @@ let player = "player1"
 let gameScore1 = 0;
 let gameScore2 = 0;
 
+let player1moves = [];
+let player2moves = [];
+
 const displayGameScore = () => {
     gameScore.innerHTML = `
         <p>Gracz 1 : Gracz 2</p>
@@ -15,10 +18,10 @@ const displayGameScore = () => {
 const markField = (e) => {
     if(player === "player1"){
         e.target.classList.add("gameField--circle")
-
+        player1moves.push(+e.target.id);
     } else if (player === "player2"){
         e.target.classList.add("gameField--cross")
-        
+        player2moves.push(+e.target.id);
     }
     player = player === "player1" ? "player2" : "player1";
     gameInfo.innerText = `Kolejny ruch: ${player === "player1" ? "gracz 1" : "gracz 2"}`
@@ -70,11 +73,54 @@ const winningGame = () => {
     displayGameScore();
 };
 
+const winningFieldsMark = (winningCombo, playerMoves, winClass) => {
+    winningCombo.forEach(item => {
+       let winItem = item.filter(number => playerMoves.includes(number))
+       if(winItem.length === 3){
+        for(const cell of winItem){
+            fields[cell].classList.add(winClass)
+            };
+       };
+       return;
+    });
+};
+
+
+const newGame = () => {
+    const newGameButton = document.querySelector(".js-newGameButton");
+
+    newGameButton.addEventListener("click", () => {
+        fields.forEach(field => {
+            field.addEventListener("click", markField);
+            field.classList.remove("gameField--circle")
+            field.classList.remove("gameField--cross")
+            field.classList.remove("win1")
+            field.classList.remove("win2")
+        });
+        player = "player1"
+        player1moves = [];
+        player2moves = [];
+        gameInfo.innerText = "Zaczyna gracz 1";
+        // player1moves = [];
+    });
+};
+
+const scoreReset = () => {
+    const scoreResetButton = document.querySelector(".js-scoreResetButton");
+
+    scoreResetButton.addEventListener("click", () => {
+        gameScore1 = 0;
+        gameScore2 = 0;
+        displayGameScore();
+    });
+};
 
 const init = () => {
     gameInfo.innerText = "Zaczyna gracz 1";
     displayGameScore();
     gameOn();
+    newGame();
+    scoreReset();
 };
 
 init();
