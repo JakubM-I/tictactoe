@@ -9,6 +9,24 @@ html{
 .tictactoeGame{
     font-family: 'Oswald', sans-serif;
     font-family: 'Roboto', sans-serif;
+    width: 100%;
+    max-width: 1000px;
+    margin-inline: auto;
+    border: 1px solid #000;
+}
+
+.tictactoeGame__header{
+    text-align: center;
+}
+
+.gameWrapper{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+.gameBoard{
+    width: 160px;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .gameField{
