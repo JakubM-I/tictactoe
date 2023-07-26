@@ -1,3 +1,4 @@
+{
 const fields = document.querySelectorAll(".js-gameField");
 const gameInfo = document.querySelector(".js-gameInfo");
 const gameScore = document.querySelector(".js-gameScore");
@@ -10,8 +11,8 @@ let player2moves = [];
 
 const displayGameScore = () => {
     gameScore.innerHTML = `
-        <p>Gracz 1 : Gracz 2</p>
-        <p>${gameScore1} : ${gameScore2}</p>
+        <p class="gameBoard__players">Gracz 1 : Gracz 2</p>
+        <p class="gameBoard__score">${gameScore1} : ${gameScore2}</p>
         `;
 };
 
@@ -124,3 +125,4 @@ const init = () => {
 };
 
 init();
+}

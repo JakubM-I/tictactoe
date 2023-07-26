@@ -63,7 +63,6 @@ body{
     border: 1px solid #000;
     background: #fff;
     font-weight: 700;
-    /* width: 50px;*/
     height: auto;
     position: relative;
     font-size: 25px;
@@ -71,32 +70,26 @@ body{
     aspect-ratio: 1/1;
 }
 
-.gameField--circle::before{
-    content: "o";
-    color: #f04545;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.gameField--circle{
+    background-image: url(/graphics/circle.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 80%;
 }
 
-.gameField--cross::before{
-    content: "x";
-    color: #3a3aef;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.gameField--cross{
+    background-image: url(/graphics/cross.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 80%;
 } 
 
 .win1{
-    border: 2px solid #f04545;
+    border: 3px solid #f04545;
 }
 
 .win2{
-    border: 2px solid #3a3aef;
+    border: 3px solid #3a3aef;
 }
 
 .gameBoard__scoreTable{
@@ -105,16 +98,21 @@ body{
     align-items: center;
 }
 
-.gameBoard__Score{
+.gameBoard__ScoreInfo{
     text-align: center;
     color: #f7aa00;
     font-size: 30px;
 }
 
+.gameBoard__score{
+    font-size: 42px;
+    font-weight: 700;
+}
+
 .gameBoard__Info{
     color: #f7aa00;
     text-align: center;
-    font-size: 20px;
+    font-size: 30px;
 }
 
 .gameBoardButtons{
