@@ -87,14 +87,14 @@ html{
 }
 
 .gameField--circle{
-    background-image: url(/graphics/circle.png);
+    background-image: url(graphics/circle.png);
     background-position: center;
     background-repeat: no-repeat;
     background-size: 80%;
 }
 
 .gameField--cross{
-    background-image: url(/graphics/cross.png);
+    background-image: url(graphics/cross.png);
     background-position: center;
     background-repeat: no-repeat;
     background-size: 80%;
