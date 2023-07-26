@@ -5,29 +5,37 @@ html{
 *, ::after, ::before{
     box-sizing: inherit;
 }
-body{
+
+.tictactoe{
     background-color: #bcdbdf;
     height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
 }
+
+@media screen and (max-width: 669px) {
+    .tictactoe{
+        height: 100lvh;
+        align-items: flex-start;
+        padding-block: 10px;
+    }
+}
+
 .tictactoeGame{
-    font-family: 'Oswald', sans-serif;
     font-family: 'Roboto', sans-serif;
-    width: 100%;
+    width: calc(100% - 20px);
     max-width: 1000px;
     margin-inline: auto;
     border: 1px solid #000;
     border-radius: 15px;
     background: #40a8c4;
-    /* background: #a0bce6; */
 }
 
 .tictactoeGame__header{
     text-align: center;
     font-family: 'Oswald', sans-serif;
-    font-size: 30px;
+    font-size: min(max(5.83vw, 38px), 58px);
     color: #f7aa00;
 }
 
@@ -36,6 +44,7 @@ body{
     grid-template-columns: 2fr 1fr;
     width: calc(100% - 20px);
     margin-inline: auto;
+    padding-block-end: 1em;
 }
 
 @media screen and (max-width: 669px) {
@@ -50,6 +59,13 @@ body{
     align-items: center;
     padding: 20px;
 }
+
+@media screen and (max-width: 669px) {
+    .gameBoardWrapper{
+        grid-row: 2/3;
+    }
+}
+
 .gameBoard{
     width: 100%;
     max-width: 450px;
@@ -98,21 +114,39 @@ body{
     align-items: center;
 }
 
+@media screen and (max-width: 669px) {
+    .gameBoard__scoreTable{
+        grid-row: 1/2;
+    }
+}
+
 .gameBoard__ScoreInfo{
     text-align: center;
     color: #f7aa00;
-    font-size: 30px;
+    font-size: clamp(25px, 3.41vw ,30px);
+}
+
+@media screen and (max-width: 669px){
+    .gameBoard__players{
+        margin: 0;
+    }
 }
 
 .gameBoard__score{
-    font-size: 42px;
+    font-size: clamp(35px, 4.63vw, 42px);
     font-weight: 700;
+}
+
+@media screen and (max-width: 669px){
+    .gameBoard__score{
+        margin: 0;
+    }
 }
 
 .gameBoard__Info{
     color: #f7aa00;
     text-align: center;
-    font-size: 30px;
+    font-size: clamp(25px, 3.41vw ,30px);
 }
 
 .gameBoardButtons{
@@ -126,6 +160,7 @@ body{
     /* border: 1px solid #f04545; */
     border-radius: 15px;
     padding: 10px 15px;
+    font-size: 18px;
     cursor: pointer;
     transition: all ease-in-out .24s;
     color: #235784;
