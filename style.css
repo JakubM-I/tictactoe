@@ -8,7 +8,7 @@ html{
 
 .tictactoe{
     background-color: #bcdbdf;
-    height: 100vh;
+    height: 100lvh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -34,8 +34,11 @@ html{
 
 .tictactoeGame__header{
     text-align: center;
+}
+
+.tictactoeGame__headerTitle{
     font-family: 'Oswald', sans-serif;
-    font-size: min(max(5.83vw, 38px), 58px);
+    font-size: min(max(5.83vw,25px),58px);
     color: #f7aa00;
 }
 
@@ -67,7 +70,7 @@ html{
 }
 
 .gameBoard{
-    width: 100%;
+    width: 23vw;
     max-width: 450px;
     display: flex;
     flex-wrap: wrap;
