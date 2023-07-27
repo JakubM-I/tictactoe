@@ -70,7 +70,7 @@ html{
 }
 
 .gameBoard{
-    width: 23vw;
+    width: max(100%, 53vw);
     max-width: 450px;
     display: flex;
     flex-wrap: wrap;
